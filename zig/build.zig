@@ -12,7 +12,7 @@ pub fn build(b: *std.Build) void {
     });
 
     const exe = b.addExecutable(.{
-        .name = "zigmetal",
+        .name = "zig-metal",
         .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,
@@ -23,6 +23,6 @@ pub fn build(b: *std.Build) void {
     b.installArtifact(exe);
 
     const bin = exe.addObjCopy(.{ .format = .bin });
-    const install_bin = b.addInstallBinFile(bin.getOutput(), "zigmetal.bin");
+    const install_bin = b.addInstallBinFile(bin.getOutput(), "zig-metal.bin");
     b.getInstallStep().dependOn(&install_bin.step);
 }

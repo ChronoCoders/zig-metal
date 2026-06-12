@@ -2,9 +2,9 @@ QEMU ?= qemu-system-aarch64
 QEMU_FLAGS = -M virt -cpu cortex-a57 -nographic -net none
 OBJCOPY ?= llvm-objcopy
 
-ZIG_BIN = zig/zig-out/bin/zigmetal.bin
-RUST_ELF = rust/target/aarch64-unknown-none/release/zigmetal
-RUST_BIN = rust/target/aarch64-unknown-none/release/zigmetal.bin
+ZIG_BIN = zig/zig-out/bin/zig-metal.bin
+RUST_ELF = rust/target/aarch64-unknown-none/release/zig-metal
+RUST_BIN = rust/target/aarch64-unknown-none/release/zig-metal.bin
 
 .PHONY: all zig rust run-zig run-rust clean
 

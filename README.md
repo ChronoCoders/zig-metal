@@ -1,4 +1,4 @@
-# zigmetal
+# zig-metal
 
 A minimal aarch64 bare metal UART bootloader stub, written twice: once in Zig, once in Rust.
 
@@ -32,7 +32,7 @@ Zig needs nothing beyond the `zig` binary itself: the freestanding aarch64 targe
 ### Zig
 
 ```sh
-make zig        # cd zig && zig build  -> zig/zig-out/bin/zigmetal.bin
+make zig        # cd zig && zig build  -> zig/zig-out/bin/zig-metal.bin
 make run-zig    # qemu-system-aarch64 -M virt -cpu cortex-a57 -nographic -net none -kernel <bin>
 ```
 
@@ -41,7 +41,7 @@ The target is selected inside `build.zig` (`cpu_arch = .aarch64`, `os_tag = .fre
 ### Rust
 
 ```sh
-make rust       # cargo build --release, then llvm-objcopy -O binary -> zigmetal.bin
+make rust       # cargo build --release, then llvm-objcopy -O binary -> zig-metal.bin
 make run-rust   # same QEMU command against the Rust binary
 ```
 
